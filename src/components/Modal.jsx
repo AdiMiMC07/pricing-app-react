@@ -1,7 +1,6 @@
 import React from 'react'
 
 const Modal = ({Mode,setShowModal,price,pageviews,planType}) => {
-    console.log(Mode)
     return (
        
         <>
@@ -9,7 +8,7 @@ const Modal = ({Mode,setShowModal,price,pageviews,planType}) => {
             className='justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none'
           >
             <div className="relative w-100 my-6">
-              <div className={`border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none ${Mode==='dark'?'bg-[#2E3945] text-white':'bg-white'}`}>
+              <div className={`border-0 rounded-lg shadow-lg relative flex flex-col md:w-full w-5/6 mx-auto bg-white outline-none focus:outline-none ${Mode==='dark'?'bg-[#2E3944] text-white':'bg-white'}`}>
                 <div className="relative p-6 flex-auto">
                   <p className="my-4 text-lg leading-relaxed">
                     Hi! Thanks for selecting a plan for your website <br/>
@@ -19,17 +18,16 @@ const Modal = ({Mode,setShowModal,price,pageviews,planType}) => {
                     PageViews = {pageviews}K and the price is ${price} / {planType?'monthly':'yearly'}
                   </p>
                 </div>
-                {/*footer*/}
-                <div className="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
+                <div className="flex items-center justify-end p-6 border-t border-solid rounded-b">
                   <button
-                    className="text-white bg-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 rounded-lg"
+                    className="text-white bg-red-500 background-transparent font-bold uppercase px-6 py-2 md:text-sm text-xs outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 rounded-lg"
                     type="button"
                     onClick={() => setShowModal(false)}
                   >
                     Close
                   </button>
                   <button
-                    className="text-white background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 bg-blue-800 rounded rounded-lg"
+                    className="text-white background-transparent font-bold uppercase px-6 py-2 md:text-sm text-xs outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 bg-blue-800 rounded rounded-lg"
                     type="button"
                     onClick={() => setShowModal(false)}
                   >

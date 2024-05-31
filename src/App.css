@@ -14,6 +14,7 @@ h1,h2,h3,h4{
   position: absolute;
   z-index: -1;
   height: 100vh;
+  width:100vw;
   transition: all .5s;
 }
 .home > * > *{
@@ -21,8 +22,9 @@ h1,h2,h3,h4{
   transition: all .25s;
 }
 .home{
-  width: 100%;
+  width: 100vw;
   height:100vh;
+  position: absolute;
   z-index: 2;
   /* background-image: url('./images/bg-pattern.svg'); */
   /* background-color: black; */
@@ -32,10 +34,7 @@ h1,h2,h3,h4{
   align-items: center;
 }
 .center-div{
-  width: 50%;
   height: 80%;
-  /* border:1px solid; */
-  
 }
 .center-top-div{
   height: 35%;
@@ -46,7 +45,6 @@ h1,h2,h3,h4{
   background-image: url('./images/pattern-circles.svg');
   background-repeat: no-repeat;
   background-position: 50% 50%;
-  background-size: 25%;
 }
 .center-top-div p{
   margin-top: .05em;
@@ -56,7 +54,7 @@ h1,h2,h3,h4{
   /* background-color: white; */
   filter: drop-shadow(0 0 1rem rgb(229, 236, 238));
   width: 100%;
-  height: 65%;
+  height: 70%;
   padding-top: 3em;
 }
 .range-slider{
@@ -74,7 +72,7 @@ h1,h2,h3,h4{
   justify-content: center; 
   align-items: center; 
   user-select: none;
-  width: 75%; 
+  width: 90%; 
   /* max-width: 30em; */
 }
 .slider{
@@ -132,10 +130,58 @@ h1,h2,h3,h4{
   background-color: rgba(26, 162, 133, 0.962);
 }
 .main-content{
-  height: 60%;
+  display: grid;
+  grid-template-areas: 
+  'head-1 head-1 head-2 head-2'
+  'slider slider slider slider'
+  'footer footer footer footer'
+  ;
+  justify-content:space-evenly;
+}
+.head-1{
+  grid-area: head-1;
+}
+.head-2{
+  grid-area: head-2;
+}
+.range-slider{
+  grid-area: slider;
+  width: 100%;
+}
+.content-footer{
+  grid-area: footer;
+
+}
+@media (width<=500px) {
+  .main-content{
+    /* height: 60%; */
+    display: grid;
+    grid-template-areas: 'head-1 head-1 head-1 head-1'
+    'slider slider slider slider'
+    'head-2 head-2 head-2 head-2'
+    'footer footer footer footer'
+    ;
+  }
+  .content-footer{
+    margin-top: 2rem;
+  }
+  .center-top-div{
+    height: 30%;
+    margin: .25em;
+  }
+  .center-bottom-div{
+    height: 70%;
+  }
+  .center-div{
+    height: 80%;
+  }
+  .head-1{
+    font-weight: 600;
+    letter-spacing: 2px;
+  }
 }
 .footer{
-  height: 40%;
+  height: 35%;
   /* width: 100%; */
 }
 .footer img{
