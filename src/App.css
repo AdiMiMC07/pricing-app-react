@@ -1,38 +1,167 @@
-.App {
-  text-align: center;
-}
+body {
+  margin: 0;
+  font-family:"Manrope";
+    /* background-color: black; */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+p,span{
+  font-weight: 600;
 }
+h1,h2,h3,h4{
+  font-weight: 800;
+}
+.background{
+  position: absolute;
+  z-index: -1;
+  height: 100vh;
+  transition: all .5s;
+}
+.home > * > *{
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  transition: all .25s;
+}
+.home{
+  width: 100%;
+  height:100vh;
+  z-index: 2;
+  /* background-image: url('./images/bg-pattern.svg'); */
+  /* background-color: black; */
+  background-repeat: no-repeat;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
-
-.App-link {
-  color: #61dafb;
+.center-div{
+  width: 50%;
+  height: 80%;
+  /* border:1px solid; */
+  
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.center-top-div{
+  height: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: url('./images/pattern-circles.svg');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 25%;
+}
+.center-top-div p{
+  margin-top: .05em;
+}
+.center-bottom-div{
+  border-radius: .75em;
+  /* background-color: white; */
+  filter: drop-shadow(0 0 1rem rgb(229, 236, 238));
+  width: 100%;
+  height: 65%;
+  padding-top: 3em;
+}
+.range-slider{
+  display: flex;
+  position: relative;
+  justify-content: center; 
+  align-items: center; 
+  flex-direction: column;
+  gap: 1em;
+  margin: 2.5em auto;
+}
+.slider-container{ 
+  position: relative;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  user-select: none;
+  width: 75%; 
+  /* max-width: 30em; */
+}
+.slider{
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 0.5em;
+  outline: none;
+  border-radius:3px;
+  cursor: pointer;
+  background-color: rgb(237, 237, 237);
+}
+.slider::-webkit-slider-thumb{
+    -webkit-appearance:none;
+    width: 0; 
+    /* z-index: -1; */
+    position: relative;
+    
+}
+.progress{
+  width: 0;
+  height: 0.4em;
+  border-radius: 3px;
+  /* background-color: rgb(155, 228, 228); */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  pointer-events: none;
+  transition-property: box-shadow;
+  transition-duration: 0.2s;
+  
+}
+.slider-thumb{
+  position: absolute;
+  top: 50%;
+  left: -0.5em;
+  transform: translateY(-50%);
+  z-index: 10;
+  background-image: url('./images/icon-slider.svg');
+  background-color: rgb(8, 213, 169);
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: 50% 50%;
+  width:2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  pointer-events: none;
+  filter:drop-shadow(-1px 20px .75rem rgb(104, 254, 251));
+}
+.slider-container:hover .slider-thumb{
+  background-color: rgba(68, 222, 189, 0.962);
+}
+.slider-container:active .slider-thumb{
+  background-color: rgba(26, 162, 133, 0.962);
+}
+.main-content{
+  height: 60%;
+}
+.footer{
+  height: 40%;
+  /* width: 100%; */
+}
+.footer img{
+  width: 5%;
+  height: 5%;
+  aspect-ratio: 1/1;
+}
+.checkBox:checked + .toggle-button{
+  background-color: black;
+  background-color: #9BE4E4;
+}
+.checkBox:focus + .toggle-button{
+  outline: none;
+}
+.toggle-button::after{
+  content: '';
+  position: absolute;
+  top: 2px;
+  background-color: white;
+  left: 2px;
+  height: 1.25rem;
+  width: 1.25rem;
+  transition: all .25s;
+  border-radius: 100%;
+  border: 1px solid rgb(209, 208, 208);
+}
+.checkBox:checked + .toggle-button::after{
+  transform: translateX(100%);
 }
